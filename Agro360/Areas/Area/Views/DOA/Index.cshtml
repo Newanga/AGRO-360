@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.Identity
+@{
+    Layout = "~/Layouts/User/_Layout.cshtml";
+    ViewData["Title"] = "DOA";
+}
+<br />
+<br />
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <span class="h2">DOA User List</span>
+                <a asp-area="Admin" asp-controller="DOA" asp-action="Create" class="btn btn-success float-right"><i class="fas fa-plus"></i> &nbsp; DOA Staff</a>
+            </div>
+            <div class="card-body">
+                <table id="DT_load" class="table table-hover" style="width:100%">
+                    <thead>
+                        <tr>
+                            <td>First Name</td>
+                            <td>Last Name</td>
+                            <td>Email</td>
+                            <td>Address</td>
+                            <td>NIC</td>
+                            <td>Contact No</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    <script src="~/js/Admin/DOA.js"></script>
+}

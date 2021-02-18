@@ -1,0 +1,109 @@
+﻿@model Agro360.Models.ApplicationUser
+@{
+    Layout = "~/Layouts/User/_Layout.cshtml";
+    ViewData["Title"] = "New DOA";
+}
+<br />
+<br />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <span class="h2">New DOA Staff</span>
+                <a asp-area="Admin" asp-controller="DOA" asp-action="Index" class="btn btn-success float-right"><i class="fas fa-arrow-left"></i> &nbsp; Back</a>
+            </div>
+            <div class="card-body">
+                <form class="form-horizontal" accept-charset="utf-8" method="post" asp-action="Register">
+
+
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="mail"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="mail" class="form-control">
+                            <span asp-validation-for="mail" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="uname"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="uname" class="form-control">
+                            <span asp-validation-for="uname" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="Psswd"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="Psswd" class="form-control">
+                            <span asp-validation-for="Psswd" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="ConfirmPsswd"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="ConfirmPsswd" class="form-control">
+                            <span asp-validation-for="ConfirmPsswd" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="FirstName"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="FirstName" class="form-control">
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="LastName"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="LastName" class="form-control">
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="NIC"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="NIC" class="form-control">
+                            <span asp-validation-for="NIC" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="Address"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="Address" class="form-control">
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="ZipCode"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="ZipCode" class="form-control">
+                            <span asp-validation-for="ZipCode" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="ContactNo"></label>
+                        <div class="col-sm-10">
+                            <input asp-for="ContactNo" class="form-control">
+                            <span asp-validation-for="ContactNo" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-4 offset-sm-2">
+                            <button type="reset" class="btn btn-secondary mb-2">
+                                <i class="fas fa-times"></i>
+                                <a asp-area="Admin" asp-controller="DOA" asp-action="Index">Cancel</a>
+                            </button>
+                            <button type="submit" class="btn btn-primary mb-2"><i class="fas fa-save"></i> Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
