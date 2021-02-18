@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Layouts/User/_Layout.cshtml";
+    ViewData["Title"] = "View Crops";
+}
+
+<br />
+<br />
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+
+            <div class="card-header">
+                <span class="h2">Harvest List</span>
+                <a asp-area="Admin" asp-controller="Harvest" asp-action="New" class="btn btn-success float-right"><i class="fas fa-plus"></i> &nbsp; Create</a>
+            </div>
+
+            <div class="card-body">
+                        <table id="DT_load" class="table table-hover" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <td>Id</td>
+                                    <td>Harvest Type</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                        </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+
+    <script src="~/js/Admin/Harvest.js"></script>
+
+}
