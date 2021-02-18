@@ -1,0 +1,76 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>39a71a45-96db-4399-8dfc-adcf474ce0ad</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Areas\Farmers\**" />
+    <Compile Remove="Test\**" />
+    <Content Remove="Areas\Farmers\**" />
+    <Content Remove="Test\**" />
+    <EmbeddedResource Remove="Areas\Farmers\**" />
+    <EmbeddedResource Remove="Test\**" />
+    <None Remove="Areas\Farmers\**" />
+    <None Remove="Test\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20210119070045_addInquiryTableFIx.cs" />
+    <Compile Remove="Migrations\20210119070045_addInquiryTableFIx.Designer.cs" />
+    <Compile Remove="Migrations\20210119070124_addInquiryTableFIx.cs" />
+    <Compile Remove="Migrations\20210119070124_addInquiryTableFIx.Designer.cs" />
+    <Compile Remove="Migrations\20210119115230_addNewColumntoInquiry.cs" />
+    <Compile Remove="Migrations\20210119115230_addNewColumntoInquiry.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Home\Views\Account\Login.cshtml" />
+    <None Include="Areas\Home\Views\Account\Register.cshtml" />
+    <None Include="wwwroot\vendor\datatables\DataTables-1.10.22\js\dataTables.bootstrap.min.js" />
+    <None Include="wwwroot\vendor\datatables\DataTables-1.10.22\js\dataTables.bootstrap4.min.js" />
+    <None Include="wwwroot\vendor\datatables\datatables.min.js" />
+    <None Include="wwwroot\vendor\datatables\LICENSE.md" />
+    <None Include="wwwroot\vendor\datatables\Responsive-2.2.6\js\dataTables.responsive.min.js" />
+    <None Include="wwwroot\vendor\datatables\Responsive-2.2.6\js\responsive.bootstrap.min.js" />
+    <None Include="wwwroot\vendor\datatables\Responsive-2.2.6\js\responsive.bootstrap4.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.7.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="5.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Areas\DOA\Views\Home\Index.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Areas\Home\Views\Shared\_ValidationScriptsPartial.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Layouts\Shared\_ValidationScriptsPartial.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Layouts\User\_ValidationScriptsPartial.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
