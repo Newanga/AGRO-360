@@ -1,0 +1,147 @@
+﻿@model Agro360.Models.ViewModels.AdminDashBoardVM
+@{
+    Layout = "~/Layouts/User/_Layout.cshtml";
+    ViewData["Title"] = "DashBoard";
+}
+
+<br>
+<div class="row">
+    <h1>Admin DashBoard</h1>
+</div>
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-4 mt-4">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="icon-big text-center">
+                            <i class="fas fa-user-alt text-secondary"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="detail">
+                            <p class="detail-subtitle">Total Accounts</p>
+                            <span class="number">@Model.TotalAccounts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-4 mt-4">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="icon-big text-center">
+                            <i class="fas fa-check text-success"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="detail">
+                            <p class="detail-subtitle">Active Accounts</p>
+                            <span class="number">@Model.ActiveAccounts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-4 mt-4">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="icon-big text-center">
+                            <i class="fas fa-times text-danger"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="detail">
+                            <p class="detail-subtitle">Inactive Accounts</p>
+                            <span class="number">@Model.DisabledAccounts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="icon-big text-center">
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="detail">
+                            <p class="detail-subtitle">Admin Accounts</p>
+                            <span class="number">@Model.AdminCount</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="icon-big text-center">
+                            <i class="fas fa-building"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="detail">
+                            <p class="detail-subtitle">DOA Accounts</p>
+                            <span class="number">@Model.DOACount</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="icon-big text-center">
+                            <i class="fas fa-store-alt"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="detail">
+                            <p class="detail-subtitle">Keells Accounts</p>
+                            <span class="number">@Model.KeellsCount</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+        <div class="card">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="icon-big text-center">
+                            <i class="fas fa-tractor"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="detail">
+                            <p class="detail-subtitle">Farmer Accounts</p>
+                            <span class="number">@Model.FarmerCount</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
