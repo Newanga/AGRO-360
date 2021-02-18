@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNetCore.Identity
+@{
+    Layout = "~/Layouts/User/_Layout.cshtml";
+    ViewData["Title"] = "Farmers";
+}
+
+<br />
+<br />
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <h2>Farmer List</h2>
+            </div>
+            <div class="card-body">
+                <table id="DT_load" class="table table-hover" style="width:100%">
+                    <thead>
+                        <tr>
+                            <td>First Name</td>
+                            <td>Last Name</td>
+                            <td>Email</td>
+                            <td>Address</td>
+                            <td>NIC</td>
+                            <td>Contact No</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    @section Scripts{
+        <script src="~/js/Admin/Farmer.js"></script>
+    }
