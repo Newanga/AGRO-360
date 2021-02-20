@@ -1,0 +1,160 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        @ViewData["Title"] - Agro360
+    </title>
+
+    <!-- #region CSS -->
+
+    <link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/linearicons-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/lightbox2/css/lightbox.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/revolution/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Home/util.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Home/main.css">
+
+    <!-- #endregion -->
+
+</head>
+<body class="animsition"  >
+
+    <!-- Header -->
+    <header>
+        <!-- Header desktop -->
+        <div class="container-menu-desktop">
+            <div class="wrap-menu-desktop">
+                <nav class="limiter-menu-desktop">
+
+                    <div class="left-header">
+                        <!-- Logo desktop -->
+                        <div class="logo">
+                            <a asp-area="Home" asp-controller="Home" asp-action="Index"><img src="~/images/home/header/logo-01.png" alt="IMG-LOGO"></a>
+                        </div>
+                    </div>
+
+                    <div class="center-header">
+                        <!-- Menu desktop -->
+                        <div class="menu-desktop">
+                            <ul class="main-menu">
+                                <li><a asp-area="Home" asp-controller="Account" asp-action="Login">Login</a></li>
+                                <li><a asp-area="Home" asp-controller="Account" asp-action="Register">Sign Up</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </nav>
+            </div>
+        </div>
+
+        <!-- Header Mobile -->
+        <div class="wrap-header-mobile">
+            <!-- Logo moblie -->
+            <div class="logo-mobile">
+                <a asp-area="Home" asp-controller="Home" asp-action="Index"><img src="~/images/home/header/logo-01.png" alt="IMG-LOGO"></a>
+            </div>
+
+            <!-- Button show menu -->
+            <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </div>
+        </div>
+
+
+        <!-- Menu Mobile -->
+        <div class="menu-mobile">
+            <ul class="main-menu-m">
+                <li>
+                    <a href="#">FARMERS</a>
+                    <ul class="sub-menu-m">
+                        <li><a asp-area="Home" asp-controller="Account" asp-action="Login">Login</a></li>
+                        <li><a asp-area="Home" asp-controller="Account" asp-action="Register">Sign Up</a></li>
+                    </ul>
+
+                    <span class="arrow-main-menu-m">
+                        <i class="fas fa-angle-right" aria-hidden="true"></i>
+                    </span>
+                </li>
+
+            </ul>
+        </div>
+
+    </header>
+
+
+    <!-- content page -->
+    <div class="bg0 p-t-95 p-b-50" >
+        <div class="container" >
+            <div class="row">
+                @RenderBody()
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- #region JScripts -->
+
+    <script src="~/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="~/vendor/animsition/js/animsition.min.js"></script>
+    <script src="~/vendor/bootstrap/dist/js/popper.js"></script>
+    <script src="~/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/vendor/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/vendor/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/vendor/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="~/vendor/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="~/vendor/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="~/vendor/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="~/vendor/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="~/vendor/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="~/vendor/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="~/vendor/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="~/vendor/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="~/js/Home/revo-custom.js"></script>
+    <script src="~/vendor/select2/select2.min.js"></script>
+    <script src="~/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="~/vendor/slick/slick.min.js"></script>
+    <script src="~/vendor/slick/slick.min.js"></script>
+    <script src="~/vendor/parallax100/parallax100.js"></script>
+    <script src="~/vendor/lightbox2/js/lightbox.min.js"></script>
+    <script src="~/vendor/isotope/isotope.pkgd.min.js"></script>
+    <script src="~/vendor/sweetalert/sweetalert.min.js"></script>
+    <script src="~/vendor/countdowntime/moment.min.js"></script>
+    <script src="~/vendor/countdowntime/moment-timezone.min.js"></script>
+    <script src="~/vendor/countdowntime/moment-timezone-with-data.min.js"></script>
+    <script src="~/vendor/countdowntime/jquery.countdown.min.js"></script>
+    <script src="~/vendor/countdowntime/countdowntime.js"></script>
+    <script src="~/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="~/vendor/waypoint/jquery.waypoints.min.js"></script>
+    <script src="~/vendor/countterup/jquery.counterup.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+    <script src="~/js/Home/map-custom.js"></script>
+
+
+    <script src="~/js/Home/main.js"></script>
+    <!-- #endregion -->
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>
