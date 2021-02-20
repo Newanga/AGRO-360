@@ -1,0 +1,155 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Agro360.Utility
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        @ViewData["Title"] - Agro360
+    </title>
+    <link href="~/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+    <link href="~/vendor/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="~/vendor/fontawesome/css/brands.min.css" rel="stylesheet">
+    <link href="~/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/vendor/flagiconcss/css/flag-icon.min.css" rel="stylesheet">
+    <link href="~/vendor/datatables/datatables.min.css" rel="stylesheet">
+    <link href="~/css/User/sidebar.css" rel="stylesheet">
+    <link href="~/css/User/navbar.css" rel="stylesheet">
+    <link href="~/css/User/master.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                @if (User.IsInRole(Roles.AdminRole))
+                {
+                    <a asp-area="Admin" asp-controller="Home" asp-action="Index"><img src="~/images/user/Asset.svg" width="210" height="42" class="app-logo"></a>
+                }
+                @if (User.IsInRole(Roles.DOARole))
+                {
+                    <a asp-area="DOA" asp-controller="Home" asp-action="Index"><img src="~/images/user/Asset.svg" width="210" height="42" class="app-logo"></a>
+                }
+                @if (User.IsInRole(Roles.KeellsRole))
+                {
+                    <a asp-area="keells" asp-controller="Home" asp-action="Index"><img src="~/images/user/Asset.svg" width="210" height="42" class="app-logo"></a>
+                }
+                @if (User.IsInRole(Roles.FarmerRole))
+                {
+                    <a asp-area="Farmer" asp-controller="Home" asp-action="Index"><img src="~/images/user/Asset.svg" width="210" height="42" class="app-logo"></a>
+                }
+
+
+            </div>
+            <ul class="list-unstyled components text-secondary">
+                @if (User.IsInRole(Roles.AdminRole))
+                {
+                    <li>
+                        <a asp-area="Admin" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin" asp-controller="Farmer" asp-action="Index"><i class="fas fa-tractor"></i> Farmers</a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin" asp-controller="DOA" asp-action="Index"><i class="fas fa-building"></i> DOA</a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin" asp-controller="Keells" asp-action="Index"><i class="fas fa-store-alt"></i>Keells</a>
+                    </li>
+                    <li>
+                        <a asp-area="Admin" asp-controller="Harvest" asp-action="Index"><i class="fas fa-carrot"></i> Harvest</a>
+                    </li>
+
+                }
+                @if (User.IsInRole(Roles.DOARole))
+                {
+                    <li>
+                        <a asp-area="DOA" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Dashboard</a>
+                    </li>
+
+                }
+                @if (User.IsInRole(Roles.KeellsRole))
+                {
+                    <li>
+                        <a asp-area="Keells" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Dashboard</a>
+                    </li>
+
+                    <li>
+                        <a asp-area="Keells" asp-controller="Report" asp-action="Index"><i class="fas fa-file-word"></i> Farmer Reports</a>
+                    </li>
+                    <li>
+                        <a asp-area="Keells" asp-controller="Inquiry" asp-action="Index"><i class="fas fa-question"></i> Inquiry</a>
+                    </li>
+
+                }
+                @if (User.IsInRole(Roles.FarmerRole))
+                {
+                    <li>
+                        <a asp-area="Farmer" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a asp-area="Farmer" asp-controller="Inquiry" asp-action="Index"><i class="fas fa-question"></i> Inquiry</a>
+                    </li>
+                }
+
+
+
+            </ul>
+
+
+        </nav>
+
+        <div id="body" class="active">
+            <nav class="navbar navbar-expand-lg navbar-white bg-success">
+                <button type="button" id="sidebarCollapse" class="btn btn-light"><i class="fas fa-bars"></i><span></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <div class="nav-dropdown">
+                                <a href="" class="nav-item nav-link dropdown-toggle text-light" data-toggle="dropdown"><i class="fas fa-user"></i> <span>@UserManager.GetUserName(User)</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i></a>
+                                <div class="dropdown-menu dropdown-menu-right nav-link-menu">
+                                    <ul class="nav-list">
+                                        <li>
+                                            <form asp-area="Home" asp-controller="Account" asp-action="SignOut" method="post">
+                                                <input type="submit" value="Log Out" class="dropdown-item border-white" />
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </nav>
+
+            <div class="content">
+                <div class="container">
+                    @RenderBody()
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="~/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/datatables/datatables.min.js"></script>
+    <script src="~/js/User/script.js"></script>
+    @RenderSection("Scripts", required: false)
+
+
+</body>
+
+</html>
