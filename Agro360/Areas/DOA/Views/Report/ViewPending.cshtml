@@ -1,0 +1,117 @@
+﻿@model Agro360.Models.ViewModels.FarmerReportVM
+@{
+    Layout = "~/Layouts/User/_Layout.cshtml";
+    ViewData["Title"] = "Pending Report";
+}
+
+
+<br />
+<br />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <span class="h2">View Report Details</span>
+                <a asp-area="DOA" asp-controller="Home" asp-action="Index" class="btn btn-success float-right"><i class="fas fa-arrow-left"></i> &nbsp;Back</a>
+            </div>
+            <div class="card-body">
+                    <input hidden asp-for="@Model.ReportId">
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="@Model.CreatedDate"></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" disabled value="@Model.CreatedDate">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="@Model.CreatedTime"></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" disabled value="@Model.CreatedTime">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="@Model.HarvestType"></label>
+                        <div class="col-sm-10">
+                            <input type="text" disabled class="form-control" value="@Model.HarvestType">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="@Model.Quantity"></label>
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" disabled value="@Model.Quantity">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">Kg</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2">Images</label>
+                        <div class="col-sm-10 d-flex justify-content-center">
+
+                            <div id="carouselExampleSlidesOnly" class="carousel slide" data-interval="false" data-ride="carousel">
+                                <div class="carousel-inner" role="listbox">
+                                    @for (int i = 0; i < Model.ImageLinks.Count; i++)
+                                    {
+                                        if (i == 0)
+                                        {
+
+                                            <div class="carousel-item active ">
+                                                <img src=@Model.ImageLinks[i] class="img-responsive" style=" height: 400px;">
+                                            </div>
+                                        }
+                                        else
+                                        {
+
+                                            <div class="carousel-item ">
+                                                <img src=@Model.ImageLinks[i] class="img-responsive" style=" height: 400px;">
+                                            </div>
+                                        }
+
+                                    }
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row">
+                        <div class="col-sm-4 offset-sm-2">
+                            <form class="form-horizontal" method="post" >
+                                <input hidden asp-for="@Model.ReportId">               
+                                <button type="submit" name="Reject" value="Reject" class="btn btn-danger mb-2" formaction="/DOA/Report/RejectReport" formmethod="post">
+                                <i class="fas fa-times"></i> Reject</button>
+                                <button type="submit" name="Accept" value="Accept" class="btn btn-success mb-2" formaction="/DOA/Report/AcceptReport" formmethod="post">
+                                <i class="fas fa-check"></i> Accept</button>
+                            </form>
+                        </div>
+
+                    </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+}
