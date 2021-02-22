@@ -1,0 +1,97 @@
+﻿@model Agro360.Models.ViewModels.CreateFarmerReportVM
+@{
+    Layout = "~/Layouts/User/_Layout.cshtml";
+    ViewData["Title"] = "New Report";
+}
+
+<br />
+<br />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <span class="h2">Create New Report</span>
+                <a asp-area="Farmer" asp-controller="Report" asp-action="Index" class="btn btn-success float-right"><i class="fas fa-arrow-left"></i> &nbsp;Back</a>
+            </div>
+            <div class="card-body">
+                <form class="form-horizontal " encType="multipart/form-data"  method="post" asp-action="CreateNewReport">
+
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="FarmerReport.Quantity"></label>
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" asp-for="FarmerReport.Quantity" placeholder="20">
+                                    <div class="input-group-append">
+                                        <div class="input-group-text">Kg</div>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="FarmerReport.Quantity" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="FarmerReport.Harvest"></label>
+                        <div class="col-sm-10">
+                            <select class="form-control" asp-for="@Model.FarmerReport.HarvestId" asp-items="@Model.HarvestSelectList">
+                                <option value="0" selected disabled>--Select Harvest Type--</option>
+                            </select>
+                            <span asp-validation-for="@Model.FarmerReport.HarvestId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2" asp-for="FarmerReport.HarvestImages"></label>
+                        <div class="col-sm-10">
+                            <div class="custom-file">
+                                <input asp-for="FarmerReport.HarvestImages" class="form-control custom-file-input">
+                                <label class="custom-file-label">Choose File...</label>
+                                <span asp-validation-for="FarmerReport.HarvestImages" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-4 offset-sm-2">
+                            <button type="reset" class="btn btn-secondary mb-2">
+                                <i class="fas fa-times"></i>
+                                <a asp-area="Farmer" asp-controller="Report" asp-action="Index">Cancel</a>
+                            </button>
+                            <button id="submit" type="submit" class="btn btn-primary mb-2"><i class="fas fa-save"></i> Save</button>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    <script>
+        $(document).ready(function () {
+            $('.custom-file-input').on("change", function () {
+                var fileLabel = $(this).next('.custom-file-label');
+                var files = $(this)[0].files;
+                if (files.length > 1) {
+                    fileLabel.html(files.length + ' files selected');
+                }
+                else if (files.length == 1) {
+                    fileLabel.html(files[0].name);
+                }
+            });
+        });
+    </script>
+
+}
