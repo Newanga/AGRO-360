@@ -1,0 +1,204 @@
+﻿@model Agro360.Models.ViewModels.FarmerDashBoardVM
+@{
+    Layout = "~/Layouts/User/_Layout.cshtml";
+    ViewData["Title"] = "DashBoard";
+}
+
+
+<br>
+<br />
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <span class="h2">Report Data</span>
+            </div>
+            <div class="card-body ">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="icon-big text-center">
+                                            <i class="fas fa-edit text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="detail">
+                                            <p class="detail-subtitle">Reviewable </p>
+                                            <span class="number">@Model.ReviewableReportCount</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="icon-big text-center">
+                                            <i class="fas fa-hourglass-start text-secondary"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="detail">
+                                            <p class="detail-subtitle">Pending </p>
+                                            <span class="number">@Model.PendingReportCount</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="icon-big text-center">
+                                            <i class="fas fa-check text-success"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="detail">
+                                            <p class="detail-subtitle">Approved</p>
+                                            <span class="number">@Model.ApprovedReportCount</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-3 mt-3">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="icon-big text-center">
+                                            <i class="fas fa-times text-danger"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="detail">
+                                            <p class="detail-subtitle">Rejected</p>
+                                            <span class="number">@Model.RejectedReportCount</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+
+            <div class="card-header">
+                <span class="h2">Report List</span>
+                <a asp-area="Farmer" asp-controller="Report" asp-action="New" class="btn btn-success float-right"><i class="fas fa-plus"></i> &nbsp; Create</a>
+            </div>
+
+            <div class="card-body">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item ml-auto ">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#reviewable" role="tab">Reviewable</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#pending" role="tab">Pending</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="contact-tab" data-toggle="tab" href="#approved" role="tab">Approved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="test-tab" data-toggle="tab" href="#rejected" role="tab">Rejected</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+
+                    <div class="tab-pane fade active show" id="reviewable" role="tabpanel">
+
+                        <table id="DT_load_reviewable" class="table table-hover" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <td>Date</td>
+                                    <td>Time</td>
+                                    <td>Harvest Type</td>
+                                    <td>Quantity (Kg)</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                        </table>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="pending" role="tabpanel">
+                        <table id="DT_load_pending" class="table table-hover" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <td>Date</td>
+                                    <td>Time</td>
+                                    <td>Harvest Type</td>
+                                    <td>Quantity (Kg)</td>
+                                    <td style="text-align: center; "></td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane fade " id="approved" role="tabpanel">
+                        <table id="DT_load_approved" class="table table-hover" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <td>Date</td>
+                                    <td>Time</td>
+                                    <td>Harvest Type</td>
+                                    <td>Quantity (Kg)</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane fade" id="rejected" role="tabpanel">
+                        <table id="DT_load_rejected" class="table table-hover" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <td>Date</td>
+                                    <td>Time</td>
+                                    <td>Harvest Type</td>
+                                    <td>Quantity (Kg)</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+
+    <script src="~/js/Farmer/load_datatable_farmer_data.js"></script>
+
+}
+
+
+
+
+
+
+
