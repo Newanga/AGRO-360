@@ -1,0 +1,622 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- #region CSS -->
+    <link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/linearicons-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/slick/slick.css">
+   <link rel="stylesheet" type="text/css" href="~/vendor/lightbox2/css/lightbox.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/perfect-scrollbar/perfect-scrollbar.css">
+   <link rel="stylesheet" type="text/css" href="~/vendor/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/revolution/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Home/util.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Home/main.css">
+
+    <!-- #endregion -->
+
+</head>
+
+<body class="animsition">
+
+    <!-- Header -->
+    <header>
+        <!-- Header desktop -->
+        <div class="container-menu-desktop">
+            <div class="wrap-menu-desktop">
+                <nav class="limiter-menu-desktop">
+
+                    <div class="left-header">
+                        <!-- Logo desktop -->
+                        <div class="logo">
+                            <a asp-area="Home" asp-controller="Home" asp-action="Index"><img src="~/images/home/header/logo-01.png" alt="IMG-LOGO"></a>
+                        </div>
+                    </div>
+
+                    <div class="center-header">
+                        <!-- Menu desktop -->
+                        <div class="menu-desktop">
+                            <ul class="main-menu">
+                                <li><a href="#Values">Our Values</a></li>
+                                <li><a href="#Harvest">Harvest</a></li>
+                                <li><a href="#Testimonials">Testimonials</a></li>
+                                <li><a href="#Message">Messsage</a></li>
+                                <li><a href="#Locate">Locate</a></li>
+                                <li><a href="#Contact">Contact</a></li>
+                                <li class="active-menu">
+                                    <a href="#">Farmers</a>
+                                    <ul class="sub-menu">
+                                        <li><a asp-area="Home" asp-controller="Account" asp-action="Login">Login</a></li>
+                                        <li><a asp-area="Home" asp-controller="Account" asp-action="Register">Sign Up</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </nav>
+            </div>
+        </div>
+
+        <!-- Header Mobile -->
+        <div class="wrap-header-mobile">
+            <!-- Logo moblie -->
+            <div class="logo-mobile">
+                <a href="index.html"><img src="~/images/home/header/logo-01.png" alt="IMG-LOGO"></a>
+            </div>
+
+            <!-- Button show menu -->
+            <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </div>
+        </div>
+
+
+        <!-- Menu Mobile -->
+        <div class="menu-mobile">
+            <ul class="main-menu-m">
+                <li><a href="#Values">Our Values</a></li>
+                <li><a href="#Harvest">Harvest</a></li>
+                <li><a href="#Testimonials">Testimonials</a></li>
+                <li><a href="#Message">Message</a></li>
+                <li><a href="#Locate">Locate</a></li>
+                <li><a href="#Contact">Contact</a></li>
+                <li>
+                    <a href="#">FARMERS</a>
+                    <ul class="sub-menu-m">
+                        <li><a asp-area="Home" asp-controller="Account" asp-action="Login">Login</a></li>
+                        <li><a asp-area="Home" asp-controller="Account" asp-action="Register">Sign Up</a></li>
+                    </ul>
+
+                    <span class="arrow-main-menu-m">
+                        <i class="fas fa-arrow-left"></i>
+                    </span>
+                </li>
+
+            </ul>
+        </div>
+
+    </header>
+
+    <!-- Slider -->
+    <section class="sec-slider">
+        <div class="rev_slider_wrapper fullwidthbanner-container">
+            <div id="rev_slider_4" class="rev_slide fullwidthabanner" data-version="5.4.5" style="display:none">
+                <ul>
+                    <!-- Slide 1 -->
+                    <li data-transition="fade">
+                        <!--  -->
+                        <img src="~/images/home/575.jpg" alt="IMG-BG" class="rev-slidebg">
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Values -->
+    <section id="Values" class="sec-deal bg-img1 p-t-145 p-b-100" style="background-image: url(images/home/Values/bg-02.jpg);">
+        <div class="container">
+            <div class="size-a-1 flex-col-c-m p-b-65">
+                <h3 class="txt-center txt-l-101 cl3 respon1">
+                    Our Values
+                </h3>
+            </div>
+
+            <div class="pos-relative">
+                <div class="p-b-15">
+                    <div class="wrap-pic-max-w size-w-34 txt-center m-rl-auto pos-relative lh-00 w-full-sm">
+                        <img src="~/images/home/Values/values.jpg" alt="IMG">
+                        <img class="ab-c-t dis-none-xl" src="~/images/home/Values/values.jpg" alt="IMG">
+                    </div>
+                </div>
+
+                <div class="flex-w flex-sb size-a-16 ab-t-l respon9">
+                    <div class="size-w-33 flex-col-sb p-t-25 respon10">
+
+                        <div class="flex-w flex-sb-t p-tb-15">
+                            <div class="size-w-36 flex-col-str p-t-16 respon6-01">
+                                <span class="txt-right txt-m-114 cl3 p-b-10 respon6-03">
+                                    HEALTHY DIED
+                                </span>
+
+
+                            </div>
+
+                            <div class="size-w-35 wrap-pic-w respon6-02">
+                                <img src="~/images/home/Values/symbol-30.png" alt="SYMBOL">
+                            </div>
+                        </div>
+
+
+                        <div class="flex-w flex-sb-t p-tb-15">
+                            <div class="size-w-36 flex-col-str p-t-16 respon6-01">
+                                <span class="txt-right txt-m-114 cl3 p-b-10 respon6-03">
+                                    Not care of quality
+                                </span>
+
+
+                            </div>
+
+                            <div class="size-w-35 wrap-pic-w respon6-02">
+                                <img src="~/images/home/Values/symbol-31.png" alt="SYMBOL">
+                            </div>
+                        </div>
+
+
+                        <div class="flex-w flex-sb-t p-tb-15">
+                            <div class="size-w-36 flex-col-str p-t-16 respon6-01">
+                                <span class="txt-right txt-m-114 cl3 p-b-10 respon6-03">
+                                    Always Fresh
+                                </span>
+
+                            </div>
+
+                            <div class="size-w-35 wrap-pic-w respon6-02">
+                                <img src="~/images/home/Values/symbol-32.png" alt="SYMBOL">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="size-w-33 flex-col-sb p-t-25 respon10">
+
+                        <div class="flex-w flex-sb-t p-tb-15">
+                            <div class="size-w-35 wrap-pic-w">
+                                <img src="~/images/home/Values/symbol-33.png" alt="SYMBOL">
+                            </div>
+
+                            <div class="size-w-36 flex-col-str p-t-16">
+                                <span class="txt-m-114 cl3 p-b-10">
+                                    Food safety
+                                </span>
+
+                            </div>
+                        </div>
+
+
+                        <div class="flex-w flex-sb-t p-tb-15">
+                            <div class="size-w-35 wrap-pic-w">
+                                <img src="~/images/home/Values/symbol-34.png" alt="SYMBOL">
+                            </div>
+
+                            <div class="size-w-36 flex-col-str p-t-16">
+                                <span class="txt-m-114 cl3 p-b-10">
+                                    Best Quality
+                                </span>
+
+
+                            </div>
+                        </div>
+
+                        <div class="flex-w flex-sb-t p-tb-15">
+                            <div class="size-w-35 wrap-pic-w">
+                                <img src="~/images/home/Values/symbol-35.png" alt="SYMBOL">
+                            </div>
+
+                            <div class="size-w-36 flex-col-str p-t-16">
+                                <span class="txt-m-114 cl3 p-b-10">
+                                    Premiun Quality
+                                </span>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Harvest -->
+    <div id="Harvest" class="sec-product bg0 p-t-145 p-b-25">
+        <div class="container">
+
+            <div class="size-a-1 flex-col-c-m p-b-48">
+                <div class="txt-center txt-m-201 cl10 how-pos1-parent m-b-14">
+                    Featured Farmer Products
+
+                    <div class="how-pos1">
+                        <img src="~/images/home/harvest/symbol-02.png" alt="IMG">
+                    </div>
+                </div>
+
+                <h3 class="txt-center txt-l-101 cl3 respon1">
+                    Some of Our Harvest
+                </h3>
+            </div>
+
+            <div class="row isotope-grid">
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-75 isotope-item fruit-juic-fill other-fill">
+                    <div class="block1">
+
+                        <div class="block1-bg wrap-pic-w bo-all-1 bocl12 hov3 trans-04">
+
+                            <img src="~/images/home/harvest/strawberry.jpg" alt="IMG">
+
+                            <div class="block1-content flex-col-c-m p-b-46  txt-m-103 cl3 txt-center ">
+                                Strawberry
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-75 isotope-item fruit-fill">
+
+                    <div class="block1">
+                        <div class="block1-bg wrap-pic-w bo-all-1 bocl12 hov3 trans-04">
+                            <img src="~/images/home/harvest/pumpkin.jpg" alt="IMG">
+
+                            <div class="block1-content flex-col-c-m p-b-46  txt-m-103 cl3 txt-center ">
+                                Pumpkin
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-75 isotope-item vegetable-fill dried-fill other-fill">
+
+                    <div class="block1">
+                        <div class="block1-bg wrap-pic-w bo-all-1 bocl12 hov3 trans-04">
+                            <img src="~/images/home/harvest/Tomato.jpg" alt="IMG">
+
+                            <div class="block1-content flex-col-c-m p-b-46  txt-m-103 cl3 txt-center ">
+                                Tomato
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-75 isotope-item vegetable-fill dried-fill">
+
+                    <div class="block1">
+                        <div class="block1-bg wrap-pic-w bo-all-1 bocl12 hov3 trans-04">
+                            <img src="~/images/home/harvest/Cabbage.jpg" alt="IMG">
+
+                            <div class="block1-content flex-col-c-m p-b-46  txt-m-103 cl3 txt-center ">
+                                Cabbage
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Testimonials -->
+    <section id="Testimonials" class="sec-testimonials bg0 p-t-145 p-b-80">
+        <div class="container">
+            <div class="size-a-1 flex-col-c-m p-b-70">
+                <div class="txt-center txt-m-201 cl10 how-pos1-parent m-b-14">
+                    Testimonials
+
+                    <div class="how-pos1">
+                        <img src="~/images/home/harvest/symbol-02.png" alt="IMG">
+                    </div>
+                </div>
+
+                <h3 class="txt-center txt-l-101 cl3 respon1">
+                    Our Farmers
+                </h3>
+            </div>
+
+            <!-- slide7 -->
+            <div class="wrap-slick7 m-rl--15">
+                <div class="slick7">
+
+
+                    <!-- - -->
+                    <div class="item-slick7 p-rl-15">
+                        <div class="flex-w flex-sb-t bo-all-2 bocl18 p-rl-33 p-t-33 p-b-30 hov7-parent p-rl-15-sm">
+                            <div class="size-a-14 wrap-pic-s bo-3-rad-50per bocl11 of-hidden trans-04 hov7">
+                                <img src="~/images/home/Testimonials/Asset 4.svg" alt="AVATAR">
+                            </div>
+
+                            <div class="size-w-7 flex-col-l p-t-10 w-full-sm">
+                                <p class="txt-s-101 cl6 p-b-17">
+                                    My Sales have Increased ever since I Have began to use the platform. It Saves my Time and I can concentrate more on my harvest.
+                                </p>
+
+                                <span class="txt-m-117 cl3 p-b-4">
+                                    Tikiri Bandara
+                                </span>
+
+                                <span class="txt-s-106 cl10">
+                                    Local farmer
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- - -->
+                    <div class="item-slick7 p-rl-15">
+                        <div class="flex-w flex-sb-t bo-all-2 bocl18 p-rl-33 p-t-33 p-b-30 hov7-parent p-rl-15-sm">
+                            <div class="size-a-14 wrap-pic-s bo-3-rad-50per bocl11 of-hidden trans-04 hov7">
+                                <img src="~/images/home/Testimonials/Asset 1.svg" alt="AVATAR">
+                            </div>
+
+                            <div class="size-w-7 flex-col-l p-t-10 w-full-sm">
+                                <p class="txt-s-101 cl6 p-b-17">
+                                    The platform is great. I have been able to deliver more harvest than before thanks to the platform
+                                </p>
+
+                                <span class="txt-m-117 cl3 p-b-4">
+                                    Heen Menika
+                                </span>
+
+                                <span class="txt-s-106 cl10">
+                                    Local farmer
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Form Contact -->
+    <section id="Message" class="bg12 p-t-145 p-b-100">
+        <div class="container">
+            <div class="size-a-1 flex-col-c-m p-b-70">
+                <div class="txt-center txt-m-201 cl10 how-pos1-parent m-b-14">
+                    Get In Touch
+
+                    <div class="how-pos1">
+                        <img src="~/images/home/harvest/symbol-02.png" alt="IMG">
+                    </div>
+                </div>
+
+                <h3 class="txt-center txt-l-101 cl3 respon1">
+                    Leave us a message!
+                </h3>
+            </div>
+
+            <form id="contact-form" class="validate-form" method="post" action="includes/contact-form.php"
+                  name="contact">
+                <div class="row">
+                    <div class="col-sm-6 p-b-30">
+                        <div class="validate-input" data-validate="Name is required">
+                            <input class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20" type="text"
+                                   name="name" placeholder="Your Full Name *">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 p-b-30">
+                        <div class="validate-input" data-validate="Valid email is: ex@abc.xyz">
+                            <input class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20" type="text"
+                                   name="email" placeholder="Your Email *">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 p-b-30">
+                        <div>
+                            <input class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20" type="text"
+                                   name="address" placeholder="Your Address">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 p-b-30">
+                        <div class="validate-input" data-validate="Phone is required">
+                            <input class="txt-s-101 cl3 plh1 size-a-46 bo-all-1 bocl15 focus1 p-rl-20" type="text"
+                                   name="phone" placeholder="Your Phone *">
+                        </div>
+                    </div>
+
+                    <div class="col-12 p-b-30">
+                        <div class="validate-input" data-validate="Message is required">
+                            <textarea class="txt-s-101 cl3 plh1 size-a-47 bo-all-1 bocl15 focus1 p-rl-20 p-tb-10"
+                                      name="msg" placeholder="Your Message"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-c p-t-10">
+                    <button class="flex-c-m txt-s-103 cl0 bg10 size-a-2 hov-btn2 trans-04">
+                        Send us now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Map -->
+    <div id="Locate" class="map">
+        <div class="contact-map size-h-7" id="google_map" data-map-x="19.420967" data-map-y="-99.162822"
+             data-scrollwhell="0" data-draggable="1" data-zoom="15"></div>
+    </div>
+
+    <!-- Ccontact -->
+    <section id="Contact" class="container p-t-90 p-b-45">
+        <div class="row">
+            <div class="col-sm-6 col-lg-3 p-b-50">
+                <div class="flex-col-c-m p-rl-25">
+                    <div class="wrap-pic-max-s p-b-25">
+                        <img src="~/images/home/contact/address.png" alt="IMG">
+                    </div>
+
+                    <h5 class="txt-m-114 cl3 txt-center p-b-9">
+                        Address
+                    </h5>
+
+                    <span class="txt-s-101 cl6 txt-center">
+                        182, Casal Road, Colombo, 14512 , LK
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 p-b-50">
+                <div class="flex-col-c-m p-rl-25">
+                    <div class="wrap-pic-max-s p-b-25">
+                        <img src="~/images/home/contact/phone.png" alt="IMG">
+                    </div>
+
+                    <h5 class="txt-m-114 cl3 txt-center p-b-9">
+                        Phone
+                    </h5>
+
+                    <span class="txt-s-101 cl6 txt-center">
+                        011 455 7895
+                    </span>
+
+                    <span class="txt-s-101 cl6 txt-center">
+                        077 799 7654
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 p-b-50">
+                <div class="flex-col-c-m p-rl-25">
+                    <div class="wrap-pic-max-s p-b-25 p-t-5">
+                        <img src="~/images/home/contact/mail.png" alt="IMG">
+                    </div>
+
+                    <h5 class="txt-m-114 cl3 txt-center p-b-9">
+                        Emaill contact
+                    </h5>
+
+                    <span class="txt-s-101 cl6 txt-center">
+                        Naven.price@agro360.com
+                    </span>
+
+                    <span class="txt-s-101 cl6 txt-center">
+                        Nuwan@agro360.com
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 p-b-50">
+                <div class="flex-col-c-m p-rl-25">
+                    <div class="wrap-pic-max-s p-b-25">
+                        <img src="~/images/home/contact/web.png" alt="IMG">
+                    </div>
+
+                    <h5 class="txt-m-114 cl3 txt-center p-b-9">
+                        Website
+                    </h5>
+
+                    <span class="txt-s-101 cl6 txt-center">
+                        www.Agro-360.com
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Logo -->
+    <div class="sec-logo bg12">
+        <div class="container">
+            <div class="flex-w flex-sa-m bo-t-1 bocl13 p-tb-60">
+                <a href="https://www.keellssuper.com/" target="_blank" class="dis-block how2 p-rl-15 m-tb-20">
+                    <img class="trans-04" src="~/images/home/logos/Keells.png" height="100" width="200" alt="IMG">
+                </a>
+
+                <a href="#" class="dis-block how2 p-rl-15 m-tb-20" target="_blank">
+                    <img class="trans-04" src="~/images/home/logos/Asset.svg" width="150" height="300" alt="IMG">
+                </a>
+
+                <a href="https://www.doa.gov.lk/" target="_blank" class="dis-block how2 p-rl-15 m-tb-20">
+                    <img class="trans-04" src="~/images/home/logos/DOA.png" height="100" width="200" alt="IMG">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg0">
+        <div class="container">
+
+            <div class="flex-w flex-sb-m bo-t-1 bocl14 p-tb-14">
+                <span class="txt-s-101 cl9 p-tb-10 p-r-29">
+                    Copyright © 2020 Agro360. All rights reserved.
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <div class="btn-back-to-top bg0-hov" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+            <span class="lnr lnr-chevron-up"></span>
+        </span>
+    </div>
+
+
+    <!-- #region JScripts -->
+
+    <script src="~/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="~/vendor/animsition/js/animsition.min.js"></script>
+    <script src="~/vendor/bootstrap/dist/js/popper.js"></script>
+    <script src="~/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+   <script src="~/vendor/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/vendor/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/js/Home/revo-custom.js"></script>
+    <script src="~/vendor/select2/select2.min.js"></script>
+    <script src="~/vendor/slick/slick.min.js"></script>
+    <script src="~/vendor/slick/slick.min.js"></script>
+    <script src="~/vendor/isotope/isotope.pkgd.min.js"></script>
+    <script src="~/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="~/vendor/waypoint/jquery.waypoints.min.js"></script>
+    <script src="~/vendor/countterup/jquery.counterup.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+    <script src="~/js/Home/map-custom.js"></script>
+    <script src="~/js/Home/main.js"></script>
+    <!-- #endregion -->
+
+</body>
+
+</html>
