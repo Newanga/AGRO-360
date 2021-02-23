@@ -1,0 +1,78 @@
+﻿@model Agro360.Models.ApplicationUser
+@{
+    Layout = "~/Layouts/Account/_Layout.cshtml";
+    ViewData["Title"] = "Register";
+}
+<div class="col-md-12 p-b-50">
+    <div class="p-l-15 p-rl-0-lg">
+        <h4 class="txt-m-124 cl3 p-b-28">
+            Register
+        </h4>
+        <form class="how-bor3 p-rl-30 p-t-32 p-b-66" method="post">
+            <div class="txt-s-101 cl6 p-b-10">
+                <label asp-for="mail"></label>
+                <input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" asp-for="mail"  placeholder="TikiriBanda@gmail.com"/>
+                <span asp-validation-for="mail" class="text-danger"></span>
+            </div>
+            <div class="txt-s-101 cl6 p-b-10">
+                <label asp-for="uname"></label>
+                <input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" asp-for="uname" placeholder="TikiriBanda12345" />
+                <span asp-validation-for="uname" class="text-danger"></span>
+            </div>
+
+            <div class="txt-s-101 cl6 p-b-10">
+                <label asp-for="Psswd"></label>
+                <input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" asp-for="Psswd" placeholder="..................." />
+                <span asp-validation-for="Psswd" class="text-danger"></span>
+            </div>
+
+            <div class="txt-s-101 cl6 p-b-10">
+                <label asp-for="ConfirmPsswd"></label>
+                <input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" asp-for="ConfirmPsswd" placeholder="..................."  />
+                <span asp-validation-for="ConfirmPsswd" class="text-danger"></span>
+            </div>
+            <div class="txt-s-101 cl6 p-b-10">
+                <label asp-for="FirstName"></label>
+                <input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" asp-for="FirstName" placeholder="Tikiri" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="txt-s-101 cl6 p-b-10">
+                <label asp-for="LastName"></label>
+                <input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" asp-for="LastName" placeholder="Banda"/>
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="txt-s-101 cl6 p-b-10">
+                <label asp-for="NIC"></label>
+                <input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" asp-for="NIC"  placeholder="997845125V"/>
+                <span asp-validation-for="NIC" class="text-danger"></span>
+            </div>
+            <div class="txt-s-101 cl6 p-b-10">
+                <label asp-for="Address"></label>
+                <input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" asp-for="Address" placeholder="187, Pansala Road, Kahaatagasdigilliya, Anuradhapura" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+
+            <div class="txt-s-101 cl6 p-b-10">
+                <label asp-for="ZipCode"></label>
+                <input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" asp-for="ZipCode" placeholder="11000"/>
+                <span asp-validation-for="ZipCode" class="text-danger"></span>
+            </div>
+            <div class="txt-s-101 cl6 p-b-10">
+                <label asp-for="ContactNo"></label>
+                <input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" asp-for="ContactNo" placeholder="071-4584454"/>
+                <span asp-validation-for="ContactNo" class="text-danger"></span>
+            </div>
+            <div class="flex-w flex-m p-t-15">
+                <button type="submit" class="flex-c-m txt-s-105 cl0 bg10 size-a-39 hov-btn2 trans-04 p-rl-10 m-r-18">
+                    Register
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+
+    @{<partial name="_ValidationScriptsPartial" />}
+}
