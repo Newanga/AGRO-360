@@ -1,0 +1,50 @@
+﻿@model Agro360.Models.LogInModel
+@{
+    Layout = "~/Layouts/Account/_Layout.cshtml";
+    ViewData["Title"] = "Login";
+}
+
+<div class="col-md-12 p-b-50"   >
+    <div class="p-r-15 p-rl-0-lg">
+        <h4 class="txt-m-124 cl3 p-b-28">
+            Login
+        </h4>
+        <form class="how-bor3 p-rl-30 p-t-32 p-b-66" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" ></div>
+            <div class="txt-s-101 cl6 p-b-10">
+                <label asp-for="Email"></label>
+                <input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" asp-for="Email" placeholder="TikiriBandara@gmail.com"/>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="txt-s-101 cl6 p-b-10">
+                <label asp-for="Password"></label>
+                <input class="txt-s-120 cl3 size-a-21 bo-all-1 bocl15 p-rl-15 focus1" asp-for="Password" placeholder="...................."/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="flex-w flex-m p-t-15">
+                <button type="submit" area="Home"  class="flex-c-m txt-s-105 cl0 bg10 size-a-39 hov-btn2 trans-04 p-rl-10 m-r-18">
+                    Login
+                </button>
+            </div>
+
+            <div class="form-group" hidden>
+                <div class="checkbox">
+                    <label asp-for="RememberMe">
+                        <input asp-for="RememberMe" />
+                        @Html.DisplayNameFor(m => m.RememberMe)
+                    </label>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+}
