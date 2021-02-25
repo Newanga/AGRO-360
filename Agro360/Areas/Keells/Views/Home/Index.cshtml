@@ -1,0 +1,204 @@
+﻿@model Agro360.Models.ViewModels.KeeelsDashBoardVM
+@{
+    Layout = "~/Layouts/User/_Layout.cshtml";
+    ViewData["Title"] = "DashBoard";
+}
+
+<br>
+<br />
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <span class="h2">Report Data</span>
+            </div>
+            <div class="card-body ">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-4 mt-4">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="icon-big text-center">
+                                            <i class="fas fa-hourglass-start text-secondary"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="detail">
+                                            <p class="detail-subtitle">Pending Reports</p>
+                                            <span class="number">@Model.PendingReportCount</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-4 mt-4">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="icon-big text-center">
+                                            <i class="fas fa-check text-success"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="detail">
+                                            <p class="detail-subtitle">Approved Reports</p>
+                                            <span class="number">@Model.ApprovedReportCount</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-4 mt-4">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="icon-big text-center">
+                                            <i class="fas fa-times text-danger"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="detail">
+                                            <p class="detail-subtitle">Rejected Reports</p>
+                                            <span class="number">@Model.RejectedReportCount</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+
+            <div class="card-header">
+                <span class="h2">Harvest Map</span>
+            </div>
+
+            <div class="card-body ">
+                <div class="row ">
+                    <div id="googleMap" style="width:100%;height:800px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+
+    <script>
+         var map
+        function myMap() {
+
+            map = new google.maps.Map(document.getElementById("googleMap"), {
+                center: { lat: 7.8731, lng: 80.7718 },
+                zoom: 8
+            });
+
+            $.get("@Url.Action("GetMapData","Map", new { Area = "Keells" })", function (data, status) {
+                var marker = [];
+                var contentString = [];
+                var infowindow = [];
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].reportState === "DOA Rejected") {
+                        marker[i] = new google.maps.Marker({
+                            position: { lat: data[i].lat, lng: data[i].lng },
+                            icon: {
+                                url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                            },
+                            map: map
+                        });
+                    }
+                    else if (data[i].reportState === "Keells Rejected") {
+                        marker[i] = new google.maps.Marker({
+                            position: { lat: data[i].lat, lng: data[i].lng },
+                            icon: {
+                                url: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                            },
+                            map: map
+                        });
+                    }
+                    else if (data[i].reportState === "Farmer Reviewable") {
+                        marker[i] = new google.maps.Marker({
+                            position: { lat: data[i].lat, lng: data[i].lng },
+                            icon: {
+                                url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+                            },
+                            map: map
+                        });
+                    }
+                    else if (data[i].reportState === "DOA Approved") {
+                        marker[i] = new google.maps.Marker({
+                            position: { lat: data[i].lat, lng: data[i].lng },
+                            icon: {
+                                url: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+                            },
+                            map: map
+                        });
+                    }
+                    else {
+                        marker[i] = new google.maps.Marker({
+                            position: { lat: data[i].lat, lng: data[i].lng },
+                            icon: {
+                                url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                            },
+                            map: map
+                        });
+                    }
+
+
+
+                    contentString[i] = '<p>' + 'Name: ' + data[i].fName + ' ' + data[i].lastName + '</p>' +
+                        '<p>' + 'Address: ' + data[i].address + '</p>' +
+                        '<p>' + 'Harvest Type: ' + data[i].harvestType + '</p>' +
+                        '<p>' + 'Quantity: ' + data[i].quantity + ' Kg' + '</p>' +
+                        '<p>' + 'Contact No: ' + data[i].contactNo + '</p>';
+
+                    infowindow[i] = new google.maps.InfoWindow({
+                        content: contentString[i]
+                    });
+
+                    var markerValue = marker[i];
+                    google.maps.event.addListener(marker[i], 'mouseover', (function (markerValue, i) {
+                        return function () {
+                            infowindow[i].open(map, marker[i]);
+                        }
+                    })(marker[i], i));
+
+                    google.maps.event.addListener(marker[i], 'mouseout', (function (markerValue, i) {
+                        return function () {
+                            infowindow[i].close(map, marker[i]);
+                        }
+                    })(marker[i], i));
+
+                }
+            });
+        }
+
+
+
+
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKCsSe8a9yME-j-OAXIjXLp9QKrMJhSdU&callback=myMap"></script>
+
+
+}
+
+
+
+
+
+
+
