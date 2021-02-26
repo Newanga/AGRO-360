@@ -1,0 +1,102 @@
+﻿@{
+    Layout = "~/Layouts/User/_Layout.cshtml";
+    ViewData["Title"] = "Reports";
+}
+
+<br />
+<br />
+<div class="row">
+    <div class="col-md-12 col-lg-12">
+        <div class="card">
+
+            <div class="card-header">
+                <span class="h2">Farmer Report List</span>
+            </div>
+
+            <div class="card-body">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#pending" role="tab">Pending</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="contact-tab" data-toggle="tab" href="#approved" role="tab">Approved</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="test-tab" data-toggle="tab" href="#keellsrejected" role="tab">Rejected</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " id="test-tab" data-toggle="tab" href="#doarejected" role="tab">DOA Rejected</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+
+
+                    <div class="tab-pane fade active show" id="pending" role="tabpanel">
+                        <table id="DT_load_pending" class="table table-hover" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <td>Date</td>
+                                    <td>Time</td>
+                                    <td>Harvest Type</td>
+                                    <td>Quantity (Kg)</td>
+                                    <td style="text-align: center; "></td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane fade " id="approved" role="tabpanel">
+                        <table id="DT_load_approved" class="table table-hover" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <td>Date</td>
+                                    <td>Time</td>
+                                    <td>Harvest Type</td>
+                                    <td>Quantity (Kg)</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane fade" id="keellsrejected" role="tabpanel">
+                        <table id="DT_load_keellsrejected" class="table table-hover" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <td>Date</td>
+                                    <td>Time</td>
+                                    <td>Harvest Type</td>
+                                    <td>Quantity (Kg)</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                    <div class="tab-pane fade" id="doarejected" role="tabpanel">
+                        <table id="DT_load_daorejected" class="table table-hover" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <td>Date</td>
+                                    <td>Time</td>
+                                    <td>Harvest Type</td>
+                                    <td>Quantity (Kg)</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+
+    <script src="~/js/Keells/load_datatable_report_data.js"></script>
+
+}
