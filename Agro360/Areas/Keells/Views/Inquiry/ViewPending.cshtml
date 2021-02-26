@@ -1,0 +1,74 @@
+﻿@model Agro360.Models.Inquiry
+@{
+    Layout = "~/Layouts/User/_Layout.cshtml";
+    ViewData["Title"] = "Pending Inquiry";
+}
+
+
+<br />
+<br />
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <span class="h2">View Inquiry Details</span>
+                <a asp-area="Keells" asp-controller="Inquiry" asp-action="Index" class="btn btn-success float-right"><i class="fas fa-arrow-left"></i> &nbsp;Back</a>
+                <a target="_blank" asp-area="Keells" asp-controller="Report" asp-action="View" class="btn btn-primary float-right" asp-route-id="@Model.ReportId"><i class="fas fa-file-word"></i> &nbsp;Report</a>
+            </div>
+            <div class="card-body">
+                <div class="form-group row">
+                    <label class="col-sm-2">Inquiry Date</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" disabled value="@Model.CreatedDate.ToString("dd/MM/yyyy")">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2">Inquiry Time</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" disabled value="@Model.CreatedDate.ToShortTimeString()">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-sm-2">Report ID</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" disabled value="@Model.ReportId">
+                    </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="col-sm-2" >Message</label>
+                    <div class="col-sm-10 ">
+                        <textarea disabled class="form-control" rows="20">@Model.Message</textarea>
+                    </div>
+                </div>
+
+                <br>
+                <div class="form-group row">
+                    <div class="col-sm-4 offset-sm-2">
+                        <form class="form-horizontal" method="post">
+                            <input hidden asp-for="@Model.Id">
+                            <button type="submit" name="Accept" value="Accept" class="btn btn-success mb-2" formaction="/Keells/Inquiry/SolveInquiry" formmethod="post">
+                                <i class="fas fa-check"></i> Solved
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+}
