@@ -1,0 +1,48 @@
+
+/*//////////////////////////////////////////////////////////////////
+[ Slide-100 ]*/
+
+.wrap-main-pic-100 img {
+	width: 100%;
+}
+
+.wrap-thumb-100 img {
+	width: 100%;
+}
+
+.fix-frame {
+	opacity: 0;
+}
+
+.main-frame, .sub-frame {
+	position: relative;
+	overflow: hidden;
+}
+
+
+.wrap-main-pic {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+}
+
+
+.btn-sub-frame {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+}
+
+
+
